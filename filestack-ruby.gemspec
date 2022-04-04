@@ -5,22 +5,24 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "filestack/ruby/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "filestack"
-  spec.version       = Filestack::Ruby::VERSION
-  spec.authors       = ["Filestack"]
-  spec.email         = ["dev@filestack.com"]
+  spec.name = "filestack"
+  spec.version = Filestack::Ruby::VERSION
+  spec.authors = ["Filestack"]
+  spec.email = ["dev@filestack.com"]
 
-  spec.summary       = %q{Official Ruby SDK for the Filestack API}
-  spec.description   = %q{This is the official Ruby SDK for Filestack - API and content management system that makes it easy to add powerful file uploading and transformation capabilities to any web or mobile application.}
-  spec.homepage      = "https://github.com/filestack/filestack-ruby"
-  spec.license       = "MIT"
+  spec.summary = %q{Official Ruby SDK for the Filestack API}
+  spec.description = %q{This is the official Ruby SDK for Filestack - API and content management system that makes it easy to add powerful file uploading and transformation capabilities to any web or mobile application.}
+  spec.homepage = "https://github.com/filestack/filestack-ruby"
+  spec.license = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
+  spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features|test-files)/})
   end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.bindir = "exe"
+  spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.metadata["allowed_push_host"] = "https://gemstash.discdrive.bayphoto.com/private"
 
   spec.add_dependency "typhoeus", "~> 1.1"
   spec.add_dependency "parallel", "~> 1.11", ">= 1.11.2"
